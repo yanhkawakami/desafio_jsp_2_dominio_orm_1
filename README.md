@@ -64,7 +64,7 @@ O modelo deve refletir as relações adequadas entre **atividades**, **participa
 
 A base de dados deve ser populada automaticamente com **instâncias de exemplo** para fins de teste e validação.
 
-A seguir, um diagrama que representa as entidades e os dados de seeding:
+### Diagrama Entidade-Relacionamento
 
 ```mermaid
 erDiagram
@@ -90,16 +90,29 @@ erDiagram
 
     PARTICIPANTE ||--o{ ATIVIDADE : "participa de"
     ATIVIDADE ||--o{ SLOT : "possui"
+```
 
-    %% Instâncias de exemplo (seeding)
-    PARTICIPANTE : (1, "Alex Brown", "alex@gmail.com")
-    PARTICIPANTE : (2, "Bob Grey", "bob@gmail.com")
-    PARTICIPANTE : (3, "Maria Green", "maria@gmail.com")
+### Dados de Seeding
 
-    ATIVIDADE : (1, "Curso de HTML", "Aprenda HTML de forma prática", 80.0)
-    ATIVIDADE : (2, "Oficina de Docker", "Prática com containers Docker", 100.0)
-    ATIVIDADE : (3, "Palestra de IA", "Inteligência Artificial aplicada a negócios", 0.0)
+#### **Participantes**
+| ID | Nome         | E-mail          |
+|----|---------------|----------------|
+| 1  | Alex Brown    | alex@gmail.com |
+| 2  | Bob Grey      | bob@gmail.com  |
+| 3  | Maria Green   | maria@gmail.com|
 
-    SLOT : (1, "2024-07-10 10:00", "2024-07-10 12:00", "Dia 1")
-    SLOT : (2, "2024-07-11 14:00", "2024-07-11 17:00", "Dia 2")
-    SLOT : (3, "2024-07-12 09:00", "2024-07-12 11:00", "Dia 3")
+#### **Atividades**
+| ID | Nome              | Descrição                                 | Preço |
+|----|-------------------|-------------------------------------------|-------|
+| 1  | Curso de HTML     | Aprenda HTML de forma prática             | 80.0  |
+| 2  | Oficina de Docker | Prática com containers Docker             | 100.0 |
+| 3  | Palestra de IA    | Inteligência Artificial aplicada a negócios | 0.0   |
+
+#### **Blocos de Horário (Slots)**
+| ID | Dia  | Início            | Fim              |
+|----|------|-------------------|------------------|
+| 1  | Dia 1 | 2024-07-10 10:00 | 2024-07-10 12:00 |
+| 2  | Dia 2 | 2024-07-11 14:00 | 2024-07-11 17:00 |
+| 3  | Dia 3 | 2024-07-12 09:00 | 2024-07-12 11:00 |
+
+---
